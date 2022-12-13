@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 
-interface TitleProps {
+interface CookieClickerProps {
   title: string;
   subtitle?: string;
 }
 
-const Title: FC<TitleProps> = ({ title, subtitle }) => {
+const CookieClicker: FC<CookieClickerProps> = ({ title, subtitle }) => {
   return (
     <>
       <h1>{title}</h1>
@@ -14,4 +14,4 @@ const Title: FC<TitleProps> = ({ title, subtitle }) => {
   );
 };
 
-export default Title;
+export default CookieClicker;
