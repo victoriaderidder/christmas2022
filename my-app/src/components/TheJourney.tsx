@@ -1,5 +1,7 @@
 import { useState } from "react";
+import Title from "./Title";
 const story = [
+    <Title title='> Lizzy.' />,
   'You wake up.',
   'this',
   'game'
