@@ -4,6 +4,7 @@ import snowflake from '../assets/img/snowflake.png'
 import Krampus from '../assets/music/Krampus.mp3'
 import DeckTheHalls from '../assets/music/DeckTheHalls.mp3'
 import '../styles/TheJourney.css'
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
 export default function Travel(this: any) {
     const [audio, setAudio] = useState(new Audio(Krampus));
