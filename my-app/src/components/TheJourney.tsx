@@ -1,11 +1,22 @@
 import { useState } from "react";
 import Title from "./Title";
+import snowflake from '../assets/img/snowflake.png'
+import song from '../assets/music/Krampus.mp3'
+import '../styles/TheJourney.css'
+
 const story = [
+    <img src={snowflake} id='snowflake' alt='snowflake' onClick={() => playSong()} />,
     <Title title='> Lizzy.' />,
-  'You wake up.',
-  'this',
-  'game'
+    'You wake up.',
+    'this',
+    'game'
 ];
+
+const playSong = () => {
+    const audio = new Audio(song);
+    audio.loop = true;
+    audio.play()
+};
 
 export default function Travel() {
     const [index, setIndex] = useState(Number);
@@ -14,7 +25,7 @@ export default function Travel() {
     };
     return (
     <div className="Journey" onClick={increment}>
-        <p>{story[index]}</p>
+        {story[index]}
     </div>
  );
 }

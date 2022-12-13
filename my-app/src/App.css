@@ -13,6 +13,11 @@
   color: white;
 }
 
-.content {
+/* .content {
   margin-bottom: 50px;
+} */
+
+body, html { 
+  overflow-x: hidden; 
+  overflow-y: hidden;
 }

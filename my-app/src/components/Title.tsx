@@ -7,7 +7,7 @@ interface TitleProps {
 const Title: FC<TitleProps> = ({ title }) => {
   return (
     <>
-      <u><h1>{title}</h1></u>
+      <h1><u>{title}</u></h1>
     </>
   );
 };

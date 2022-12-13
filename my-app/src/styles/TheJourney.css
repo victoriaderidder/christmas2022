@@ -1,0 +1,11 @@
+  
+@keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+}
+
+#snowflake {
+    width: 80%;
+    height: 80%;
+    animation: spin 35s linear infinite;
+}
