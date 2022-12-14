@@ -10,9 +10,9 @@ export default function Travel(this: any) {
     const [audio, setAudio] = useState(new Audio(Krampus));
     const [index, setIndex] = useState(Number);
     const [bgColor, setBgColor] = useState('#282c34');
-    //const [showArrow, setShowArrow] = useState(false)
+    const [showArrow, setShowArrow] = useState(false)
     const [showCookie, setShowCookie] = useState(false)
-    let cookieCounter = 0
+    let [cookieCounter, setCookieCounter] = useState(0)
 
     const playSong = (song: any) => {
         audio.pause()
@@ -31,7 +31,7 @@ export default function Travel(this: any) {
     }
 
     const playAndShow = (song: string) => {
-        //showArrow === true ? setShowArrow(false) : setShowArrow(true);
+        showArrow === true ? setShowArrow(false) : setShowArrow(true);
         playSong(song);
     }
 
@@ -42,31 +42,38 @@ export default function Travel(this: any) {
 
     const cookieIncrement = () => {
         console.log('???')
-        cookieCounter += 1
+        setCookieCounter(cookieCounter + 1)
         console.log(cookieCounter)
         cookieCounter === 10 && setShowCookie(false)
     }
 
     const story = [
         <img src={snowflake} id='snowflake' alt='snowflake' onClick={() => playAndShow(Krampus)} />,
-        <Title title='> Lizzy.' />,
-        'You wake up.',
-        'This is not the North Pole.',
-        'Not anymore.',
-        'It\'s dark and you\'re disoriented.',
-        'You try to remember how you got here.',
-        'You\'d been getting ready for your first ever Christmas as Santa.',
-        'It was late at night.',
-        'You\'d gone out to check on the reindeer.',
-        'Comet had seemed nervous and upset.',
-        'You remember trying to soothe him...',
-        '...',
-        '......',
-        '..............................',
-        '...And then what?',
-        'Your head really hurts...',
-        'Suddenly, across the room, a door bursts open!',
-        'Light floods the room...',
+
+        'You\'ve forgotten a lot.',
+        'Your memory is in tatters.',
+        'But do you remember...',
+        <><div onClick={() => setShowCookie(true)}>How to count to 1000?</div></>,
+        'Success!',
+
+        // <Title title='> Lizzy.' />,
+        // 'You wake up.',
+        // 'This is not the North Pole.',
+        // 'Not anymore.',
+        // 'It\'s dark and you\'re disoriented.',
+        // 'You try to remember how you got here.',
+        // 'You\'d been getting ready for your first ever Christmas as Santa.',
+        // 'It was late at night.',
+        // 'You\'d gone out to check on the reindeer.',
+        // 'Comet had seemed nervous and upset.',
+        // 'You remember trying to soothe him...',
+        // '...',
+        // '......',
+        // '..............................',
+        // '...And then what?',
+        // 'Your head really hurts...',
+        // 'Suddenly, across the room, a door bursts open!',
+        // 'Light floods the room...',
 
         <><div onClick={() => playAndChange(DeckTheHalls, '#C30F16')}><Title title='> Elfward.' /></div></>,
         <><div onClick={() => playAndChange(Krampus, '#282c34')}>Yay! You're at the North Pole!!!</div></>,
@@ -117,8 +124,8 @@ export default function Travel(this: any) {
         <div className="App" style={{ backgroundColor: bgColor }}>
             <header className="App-header">
                 <div className="journey" onClick={increment} style={{ backgroundColor: bgColor }}>
-                    {!showCookie && story[index]}
-                    {/* {showArrow && <p>=={">"}</p>} */}
+                    <p>{!showCookie && story[index]}</p>
+                    <p>{(showArrow && !showCookie) && '==>'}</p>
                 </div>
                 <div className="cookie" onClick={cookieIncrement}>
                     {showCookie && <CookieClicker />}
