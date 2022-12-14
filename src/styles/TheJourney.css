@@ -4,7 +4,7 @@
    100% { transform: rotate(360deg); }
 }
 
-#snowflake {
+#snowflake, #cookie {
     width: 80%;
     height: 80%;
     animation: spin 35s linear infinite;
