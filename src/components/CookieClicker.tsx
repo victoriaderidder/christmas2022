@@ -7,13 +7,6 @@ interface CookieClickerProps {
   subtitle?: string;
 }
 
-// let counter = 0
-
-// const counterStuff = () => {
-//   (counter += 1)
-//   console.log(counter)
-// }
-
 const CookieClicker: FC<CookieClickerProps> = ({ title, subtitle }) => {
   return (
     <>

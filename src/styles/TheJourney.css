@@ -1,12 +1,17 @@
   
 @keyframes spin {
-   0% { transform: rotate(0deg); }
+   0% { transform: rotate(0); }
    100% { transform: rotate(360deg); }
 }
 
-#snowflake, #cookie {
-    width: 80%;
-    height: 80%;
+#snowflake {
+    width: 650px;
+    height: 650px;
+}
+
+#cookie {
+    width: 65%;
+    height: 65%;
     animation: spin 35s linear infinite;
 }
 
