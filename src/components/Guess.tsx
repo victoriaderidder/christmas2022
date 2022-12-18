@@ -2,39 +2,44 @@ import { Button, TextField } from '@mui/material';
 import React, { FC, useEffect, useState } from 'react';
 
 interface GuessProps {
-    setShowList: (showList: boolean) => void;
+    setShowElement: (showList: boolean) => void;
     id: number;
 }
 
 const style = {
     "& .MuiInputLabel-root": {color: 'white'},
-    "& .MuiInput-underline:after": {
+    "& .MuiInput-underline:not(.Mui-error):after": {
         borderBottomColor: '#00873E'
     },
-    "& label.Mui-focused": {
+    "& label.Mui-focused:not(.Mui-error)": {
         color: '#00873E'
     },
     "& .MuiFormLabel-root.Mui-error": {
         color: "#D32F2F"
     },
-    "& .MuiInput-underline:before": {
+    "& .MuiInput-underline:not(.Mui-error):before": {
         borderBottomColor: '#00873E',
     },
-    "& .MuiInput-underline:hover:before": {
+    "& .MuiInput-underline:hover:not(.Mui-error):before": {
         borderBottomColor: '#00873E',
     },
-    "& .MuiInput-underline:hover:after": {
+    "& .MuiInput-underline:hover:not(.Mui-error):after": {
         borderBottomColor: '#00873E',
     },
+   "&.MuiInput-root:hover:not(.Mui-error):before" : {
+    borderBottomColor: '#00873E',
+   },
     input: { color: 'white' }
   }    
 
-const Guess: FC<GuessProps> = ({ setShowList, id }) => {
+const Guess: FC<GuessProps> = ({ setShowElement, id }) => {
     const [theGuess, setTheGuess] = useState('')
     const [error, setError] = useState(false);
 
     const handleGuess = () => {
-        id === 1 && (theGuess.toLowerCase() === 'cookie') ? setShowList(false) : setError(true)
+        id === 1 && (theGuess.toLowerCase() === 'cookie') ? setShowElement(false) : setError(true)
+        id === 2 && (theGuess.toLowerCase() === 'captcha') ? setShowElement(false) : setError(true)
+        id === 3 && (theGuess.toLowerCase() === 'no ellen') ? setShowElement(false) : setError(true)
     }
 
     useEffect(() => {

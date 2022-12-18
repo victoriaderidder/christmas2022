@@ -2,11 +2,11 @@ import React, { FC } from 'react';
 import Guess from './Guess';
 
 interface ShoppingListProps {
-    setShowList: (showList: boolean) => void;
+  setShowElement: (showList: boolean) => void;
     id: number;
 }
 
-const ShoppingList: FC<ShoppingListProps> = ({ setShowList, id }) => {
+const ShoppingList: FC<ShoppingListProps> = ({ setShowElement, id }) => {
   return (
     <>
     3 Rice<br />
@@ -15,7 +15,7 @@ const ShoppingList: FC<ShoppingListProps> = ({ setShowList, id }) => {
     4 Milk<br />
     10 Strawberries<br />
     8 Salad dressings
-    <p>{<Guess setShowList={setShowList} id={id} />}</p>
+    <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
     </>
   );
 };
