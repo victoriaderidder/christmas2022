@@ -6,10 +6,6 @@ interface ShoppingListProps {
     id: number;
 }
 
-// const handleGuess = (guess: string) => {
-//     guess.toLowerCase() === 'captcha'
-// }
-
 const ShoppingList: FC<ShoppingListProps> = ({ setShowList, id }) => {
   return (
     <>

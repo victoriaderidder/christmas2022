@@ -8,7 +8,6 @@ import Circus from '../assets/music/circus.mp3'
 import '../styles/TheJourney.css'
 import CookieClicker from "./CookieClicker";
 import ShoppingList from "./ShoppingList";
-import { Button, TextField } from "@mui/material";
 
 export default function Travel(this: any) {
     const [audio, setAudio] = useState(new Audio(Krampus));
@@ -21,11 +20,11 @@ export default function Travel(this: any) {
     const playSong = (song: any) => {
         audio.pause()
         setAudio(new Audio(song))
-        audio.loop = true;
     };
 
     useEffect(() => {
         audio.paused ? audio.play() : audio.pause();
+        audio.loop = true;
         return () => audio.pause();
       }, [audio]);
 
@@ -155,12 +154,21 @@ export default function Travel(this: any) {
         <Story story={`Something on Santa's desk catches your eye.`} />,
         <Story story={`It's...a shopping list?`} />,
         <><div onClick={() => setShowList(true)}><Story story={`That's weird. Santa doesn't shop...`} /></div></>,
-        <Story story={`Cookie...`} />,
+        <Story story={`Hmmm. Santa's magic cookie.`} />,
+        <Story story={`It can always get Santa home again.`} />,
+        <Story story={`Which means she must not have it with her...`} />,
+        <Story story={`Or it was taken from her.`} />,
+        <Story story={`You stand up quickly.`} />,
+        <Story story={`You need to find that cookie.`} />,
 
+        <Title title='> Will.' />,
+        <Title title='> WILL.' />,
+        <Title title='> GoodWill Toward Men?' />,
+        'Wow. Are we not friends?',
 
-        'You\'ve forgotten a lot.',
-        'Your memory is in tatters.',
-        'But do you remember...',
+        // 'You\'ve forgotten a lot.',
+        // 'Your memory is in tatters.',
+        // 'But do you remember...',
         <><div onClick={startCookie}>How to count to 1000?</div></>,
         'Maybe we should keep the fun music for a bit?',
         'After all, we need something to cheer us up...',
@@ -168,12 +176,6 @@ export default function Travel(this: any) {
         'Fine.',
         'You\'re the Grinchiest Santa I\'ve ever met.',
         <><div onClick={() => playSong(Krampus)}>Maybe the elves wanted you gone...</div></>,
-
-        <Title title='> Will.' />,
-        <Title title='> WILL.' />,
-        <Title title='> GoodWill Toward Men?' />,
-        'Wow. Are we not friends?',
-
     ];
 
     return (
