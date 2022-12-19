@@ -40,6 +40,11 @@ const Guess: FC<GuessProps> = ({ setShowElement, id }) => {
         id === 1 && (theGuess.toLowerCase() === 'cookie') ? setShowElement(false) : setError(true)
         id === 2 && (theGuess.toLowerCase() === 'captcha') ? setShowElement(false) : setError(true)
         id === 3 && (theGuess.toLowerCase() === 'no ellen') ? setShowElement(false) : setError(true)
+        id === 4 && (theGuess.toLowerCase() === 'press to activate') ? setShowElement(false) : setError(true)
+        id === 5 && (theGuess.toLowerCase() === `if you want your precious cookie back then youd better give me the thing i lack` || theGuess.toLowerCase() === `if you want your precious cookie back then you'd better give me the thing i lack`) ? setShowElement(false) : setError(true)
+        id === 6 && (theGuess.toLowerCase() === 'snowglobe') ? setShowElement(false) : setError(true)
+        id === 7 && (theGuess.toLowerCase() === 'christmas tree') ? setShowElement(false) : setError(true)
+        id === 8 && (theGuess.toLowerCase() === 'water') ? setShowElement(false) : setError(true)
     }
 
     useEffect(() => {

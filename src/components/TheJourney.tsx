@@ -10,15 +10,23 @@ import CookieClicker from "./CookieClicker";
 import ShoppingList from "./ShoppingList";
 import Captcha from "./Captcha";
 import Guess from "./Guess";
+import Stone from "./Stone";
+import Riddle from "./Riddle";
 
 export default function Travel(this: any) {
     const [audio, setAudio] = useState(new Audio(Krampus));
     const [index, setIndex] = useState(Number);
     const [bgColor, setBgColor] = useState('#282c34');
     const [showCookie, setShowCookie] = useState(false)
+    const [showKnight, setShowKnight] = useState(false)
     const [showList, setShowList] = useState(false)
     const [showCaptcha, setShowCaptcha] = useState(false)
+    const [showStone, setShowStone] = useState(false)
     const [showWordSearch, setShowWordSearch] = useState(false)
+    const [showRiddle, setShowRiddle] = useState(false);
+    const [showRiddle2, setShowRiddle2] = useState(false);
+    const [showRiddle3, setShowRiddle3] = useState(false);
+
     let [cookieCounter, setCookieCounter] = useState(0)
 
     const playSong = (song: any) => {
@@ -43,13 +51,20 @@ export default function Travel(this: any) {
     };
 
     const startCookie = () => {
+        cookieCounter === 10 && setCookieCounter(cookieCounter + 1)
         setShowCookie(true)
         playSong(Circus)
     }
 
     const cookieIncrement = () => {
         setCookieCounter(cookieCounter + 1)
-        cookieCounter === 9 && setShowCookie(false)
+        cookieCounter === 20 && setShowCookie(false)
+        cookieCounter === 20 && playSong(Krampus)
+    }
+
+    const cookieAbruptStop = () => {
+        setShowCookie(false)
+        playSong(Krampus)
     }
 
     const story = [
@@ -182,15 +197,40 @@ export default function Travel(this: any) {
 
         // <Title title='> Santa Lizzy.' />,
         // <Story story={`You're not sure how long you've been alone in the dark.`} />,
-        // <Story story={`Also, must I remind you that`} />,
-
-
-
-
-
+        // <Story story={`You tug at the door.`} />,
+        // <Story story={`You run your hands along the walls, searching for another opening.`} />,
+        // <Story story={`But there's nothing.`} />,
+        // <Story story={`Discouraged, you sit back down.`} />,
+        // <Story story={`You're an adventurer at heart, and it pains you to just wait to be rescued.`} />,
+        // <Story story={`But what else can you do?`} />,
+        // <Story story={`You scuff your boots against the dirt on the ground, creating a nice groove.`} />,
+        // <Story story={`Suddenly, you hit something...solid.`} />,
+        // <Story story={`Much more solid than dirt.`} />,
+        // <Story story={`You quickly dig it up.`} />,
+        // <Story story={`You carry the object to the sliver of light coming through the door.`} />,
+        // <Story story={`Your heart is in your throat as you realize...`} />,
+        // <Story story={`It's just a freaking rock.`} />,
+        // <Story story={`You hate it here.`} />,
+        // <Story story={`You raise the stupid rock to throw it at the stupid door.`} />,
+        // <Story story={`But wait!`} />,
+        // <><div onClick={() => setShowStone(true)}><Story story={`There's some sort of writing on the other side!`} /></div></>,
+        // <Story story={`PRESS TO ACTIVATE.`} />,
+        // <Story story={`You press the stone until your fingers hurt.`} />,
+        // <Story story={`You scour the cell for something, anything else to press.`} />,
+        // <Story story={`But you find nothing.`} />,
+        // <Story story={`Great. So that was a complete waste of time.`} />,
+        // <Story story={`At least you had nothing better to do.`} />,
 
         // <Title title='> Elfward.' />,
-        // <Story story={`You look for the cookie and receive a knight puzzle`} />,
+        // <Story story={`You are in the Magical Room for Mystical Artifacts.`} />,
+        // <Story story={`You pace up and down the aisles, looking for Santa's magical cookie.`} />,
+        // <Story story={`You wish elves were a bit more organized.`} />,
+        // <Story story={`Fnally, you find the spot where the cookie should be.`} />,
+        // <Story story={`(You can tell because there's a label that simply reads COOKIE.)`} />,
+        // <Story story={`In the cookie's place is a mysterious wrapped package.`} />,
+        // <><div onClick={() => setShowKnight(true)}><Story story={`You pick it up...`} /></div></>,
+        // <Story story={`Your blood runs cold.`} />,
+        // <Story story={`There's only one person who could have done this.`} />,
 
         // <Title title='> GoodWill Toward Men.' />,
         // <Story story={`You find the captcha buried in a chest of mementos.`} />,
@@ -217,35 +257,168 @@ export default function Travel(this: any) {
         // <Story story={`It does seem that someone has haphazardly erased the N from your clever captcha.`} />,
         // <Story story={`Turning NOEL into NO ELLEN.`} />,
         // <Story story={`You are not pleased with this vandalism.`} />,
-        <Story story={`Nor are you pleased with the idea of involving LA BEFELLENA.`} />,
-        <Story story={`She is a mystical old witch who lives in the forest and hasn't been seen for 1000 years.`} />,
-        <Story story={`You would prefer not to see her for 1000 more.`} />,
+        // <Story story={`Nor are you pleased with the idea of involving LA BEFELLENA.`} />,
+        // <Story story={`She is a mystical old witch who lives in the forest and hasn't been seen for 1000 years.`} />,
+        // <Story story={`You would prefer not to see her for 1000 more.`} />,
 
-        <Title title='> La Befellena.' />,
-        <Story story={`You are a mystical old witch who lives in the forest and hasn't been seen for 1000 years.`} />,
-        <Story story={`Hasn't been seen by the elves, that is. You see yourself just fine.`} />,
-        <Story story={`You are basically an Italian Santa Claus.`} />,
-        <Story story={`You've been doing the job perfectly fine for over a millennium.`} />,
-        <Story story={`And yet when the time came for a new Santa, he passed the coat to a child?`} />,
-        <Story story={`Insane.`} />,
-        <Story story={`Unfair.`} />,
-        <Story story={`That should be you in Charlie Calvin's little jail cell.`} />,
-        <Story story={`Yes, you know where Santa is.`} />,
-        <Story story={`Unlike everybody else in the North Pole, you are actually a magical being.`} />,
-        <Story story={`You could just tell the elves where Santa is.`} />,
-        <Story story={`But there's still time until Christmas Eve.`} />,
-        <Story story={`And they should have to come to you.`} />,
-        <Story story={`You are sick and tired of the disrespect.`} />,
-        <Story story={`Either they give you the esteem you deserve, or you...`} />,
-        <Story story={`Well, you haven't gotten that far yet.`} />,
-        <Story story={`Maybe you'll leave Santa to rot and do the job yourself.`} />,
-        <Story story={`Then you'd finally get some appreciation around here.`} />,
+        // <Title title='> La Befellena.' />,
+        // <Story story={`You are a mystical old witch who lives in the forest and hasn't been seen for 1000 years.`} />,
+        // <Story story={`Hasn't been seen by the elves, that is. You see yourself just fine.`} />,
+        // <Story story={`You are basically an Italian Santa Claus.`} />,
+        // <Story story={`You've been doing the job perfectly fine for over a millennium.`} />,
+        // <Story story={`And yet when the time came for a new Santa, he passed the coat to a child?`} />,
+        // <Story story={`Insane.`} />,
+        // <Story story={`Unfair.`} />,
+        // <Story story={`That should be you in Charlie Calvin's little jail cell.`} />,
+        // <Story story={`Yes, you know where Santa is.`} />,
+        // <Story story={`Unlike everybody else in the North Pole, you are actually a powerful magical being.`} />,
+        // <Story story={`You could just tell the elves where Santa is.`} />,
+        // <Story story={`But there's still time until Christmas Eve.`} />,
+        // <Story story={`And they should have to come to you.`} />,
+        // <Story story={`You are sick and tired of the disrespect.`} />,
+        // <Story story={`Either they give you the esteem you deserve, or you...`} />,
+        // <Story story={`Well, you haven't gotten that far yet.`} />,
+        // <Story story={`Maybe you'll leave Santa to rot and do the job yourself.`} />,
+        // <Story story={`Then you'd finally get some appreciation around here.`} />,
+
+        // <Title title='> Elfward.' />,
+        // <Story story={`You're racing towards the forest when you run smack into GoodWill Toward Men.`} />,
+        // <Story story={`(Of course, you're allowed to call him Will.)`} />,
+        // <Story story={`:(`} />,
+        // <Story story={`You quickly tell him about the puzzle you found.`} />,
+        // <Story story={`You tell him you're sure La Befellena must be behind it all -`} />,
+        // <Story story={`Santa's disappearance, the missing cookie, everything.`} />,
+        // <Story story={`And how you're certain she'll have Santa hidden within her lair.`} />,
+        // <Story story={`When you're done, Will tells you everything he's learned.`} />,
+        // <Story story={`He's also convinced La Befellena is involved.`} />,
+        // <Story story={`Together, you head towards her lair.`} />,
+        // <Story story={`(It's actually just a cottage.)`} />,
+        // <Story story={`You reach the spot where her cottage should be.`} />,
+        // <Story story={`Nothing is there but an empty plot of land.`} />,
+        // <Story story={`It's untouched by the snow that covers the rest of the ground.`} />,
+        // <Story story={`You reach out to touch it, but your hand is stopped by something...magical.`} />,
+
+        // <Title title='> GoodWill Toward Men.' />,
+        // <Story story={`You've seen this before.`} />,
+        // <Story story={`This isn't your first tango with La Befellena.`} />,
+        // <Story story={`You know her cottage is warded - protected by magic.`} />,
+        // <Story story={`You declare your intent to enter.`} />,
+        // <Story story={`The empty air before you shimmers.`} />,
+        // <Story story={`It speaks in a loud, booming voice:`} />,
+        // <><div onClick={() => setShowRiddle(true)}><Story story={`"Those who wish to enter must answer me these riddles three."`} /></div></>,
+        // <><div onClick={() => setShowRiddle2(true)}><Story story={`It speaks again:`} /></div></>,
+        // <><div onClick={() => setShowRiddle3(true)}><Story story={`And once more:`} /></div></>,
+        // <Story story={`The shimmering seems to get stronger.`} />,
+        // <Story story={`With a loud pop, La Befellena's cottage appears in the opening.`} />,
+        // <Story story={`You don't knock before throwing the door open.`} />,
+        // <Story story={`Elfward is right behind you.`} />,
+        // <Story story={`Perhaps a bit annoyed that you've led this charge.`} />,
+        // <Story story={`But you always deserved to be head elf anyway...`} />,
+
+        // <Title title='> La Befellena.' />,
+        // <Story story={`You're just minding your own business when two elves burst into your home.`} />,
+        // <Story story={`You knew they were coming, of course.`} />,
+        // <Story story={`(Powerful magical being, remember?)`} />,
+        // <Story story={`Besides, this is what you wanted.`} />,
+        // <Story story={`You wouldn't have gone to all this trouble if you weren't expecting some payoff.`} />,
+        // <Story story={`You left puzzles for Santa and the elves...`} />,
+        // <Story story={`You disfigured GoodWill Toward Men's little captcha...`} />,
+        // <Story story={`Even stole the magic cookie.`} />,
+        // <Story story={`And now it's all led to this.`} />,
+        // <Story story={`They're going to beg you for help.`} />,
+        // <Story story={`You're going to save the day.`} />,
+        // <Story story={`Finally, you'll be a valued part of Christmas just like you deserve.`} />,
+        // <Story story={`It's all going according to plan!`} />,
+        // <Story story={`You weren't really expecting them to burst into your house though.`} />,
+        // <Story story={`Surely the future Savior of Christmas deserves a polite knock.`} />,
+
+        // <Title title='> Elfward.' />,
+        // <Story story={`Normally you're a polite elf.`} />,
+        // <Story story={`You don't win the head elf election by breaking down doors.`} />,
+        // <Story story={`And under normal circumstances, you'd be willing to have a nice chat.`} />,
+        // <Story story={`But tomorrow is Christmas Eve, Santa is missing, blah blah blah...`} />,
+        // <Story story={`There's no time for manners!`} />,
+        // <Story story={`"Tell us where Santa is!" you demand.`} />,
+
+        // <Title title='> GoodWill Toward Men.' />,
+        // <Story story={`'Tell us where Santa is'? Please.`} />,
+        // <Story story={`You'll find Santa yourself.`} />,
+        // <Story story={`You're ripping open doors and tearing through cupboards.`} />,
+        // <Story story={`La Befellena stands still, looking rather shell-shocked.`} />,
+        // <Story story={`Well, what did she expect?!`} />,
+
+        // <Title title='> La Befellena.' />,
+        // <Story story={`You...did not expect this.`} />,
+        // <Story story={`Do these smarmy little jerks actually think you're responsible for Santa's disappearance?`} />,
+        // <Story story={`You've never heard something more absurd.`} />,
+        // <Story story={`Of course, everyone knows you've always wanted to be Santa.`} />,
+        // <Story story={`But kidnapping her?`} />,
+        // <Story story={`Tears come to your eyes.`} />,
+        // <Story story={`You've been keeping Christmas magic alive for a millennium and this is what they think of you.`} />,
+        // <Story story={`This is how they treat you.`} />,
+        // <Story story={`It's true that you didn't rescue Santa immediately...`} />,
+        // <Story story={`But this is the first time you've spoken to another person in centuries.`} />,
+        // <Story story={`You just wanted to be involved.`} />,
+
+        // <Title title='> Elfward.' />,
+        // <Story story={`La Befellena is crying and you are horrified.`} />,
+        // <Story story={`You should have known better.`} />,
+        // <Story story={`Always, always be polite!`} />,
+        // <Story story={`Stupid!!!`} />,
+        // <Story story={`You order Will to stop destroying her home.`} />,
+        // <Story story={`Kindly, politely, you ask La Befellena what's wrong.`} />,
+        // <Story story={`She confesses to everything - the games, knowing where Santa is.`} />,
+        // <Story story={`She holds out the magic cookie and she asks for forgiveness.`} />,
+        // <Story story={`Will angrily opens his mouth to say HELL NO, but you shush him.`} />,
+        // <Story story={`You're thinking about the puzzle she left for you.`} />,
+        // <Story story={`'If you want your precious cookie back, you'd better give me the thing I lack.'`} />,
+        // <Story story={`She meant respect...`} />,
+        // <Story story={`But what she really lacks is community.`} />,
+        // <Story story={`You feel just terrible that she's been all alone in the woods for so long.`} />,
+        // <Story story={`Of course, there's no time to waste.`} />,
+        // <Story story={`Santa needs to get this cookie.`} />,
+        // <Story story={`It takes three, so you all stand together...`} />,
+        // <Story story={`And you send it to Santa.`} />,
+        // <Story story={`Then you head back to the workshop.`} />,
+        // <Story story={`(You invite La Befellena to come with you, of course.)`} />,
+        // <Story story={`And she gratefully accepts.`} />,
+        // <Story story={`Now that Santa has the cookie, Christmas will surely be saved!`} />,
+        // <Story story={`You hope you'll see Santa soon!`} />,
+
+        // <Title title='> Santa Lizzy.' />,
+        // <Story story={`You feel something drop into your coat pocket.`} />,
+        // <Story story={`Your heart leaps!`} />,
+        // <Story story={`You quickly pull out the magic cookie.`} />,
+        // <Story story={`You're briefly overjoyed.`} />,
+        // <Story story={`But then your brow furrows.`} />,
+        // <Story story={`You're a brand new Santa.`} />,
+        // <Story story={`You've never had to use the magic cookie before.`} />,
+        // <Story story={`You're struggling to remember how to activate it.`} />,
+        // <Story story={`You try biting it, but it's as hard as stone.`} />,
+        // <Story story={`Wait...stone?`} />,
+        // <Story story={`Right! Press to activate!`} />,
+        // <Story story={`You vaguely remember Elfward telling you something like that.`} />,
+        // <Story story={`And that to avoid accidental activation, it has to be pressed something like...`} />,
+        <><div onClick={startCookie}><Story story={`A thousand times?`}/></div></>,
+        <Story story={`You're in the middle of pressing the cookie when the door bursts open!`}/>,
+        <Story story={`Charles Calvin stands in the doorway, triumphant.`} />,
+        <Story story={`"I knew you had that cookie," he says.`} />,
+        <Story story={`"Now give it to me!"`} />,
+        <Story story={`He lunges towards you!`} />,
+        <Story story={`You dodge and run out the door.`} />,
+        <Story story={`Charles is right behind you!`} />,
+        <><div onClick={startCookie}><Story story={`You keep frantically pressing the cookie, but it's hard when you're moving so much...`} /></div></>,
+        <Story story={`The cookie begins to glow and pulse!`} />,
+        <Story story={`You feel Charles' hand roughly grab your shoulder...`} />,
+        <Story story={`And then you're gone!`} />,
+        <Story story={`You find yourself in your workshop, surrounded by weeping elves.`} />,
+        <Story story={`And then you're gone!`} />,
 
 
-        // 'You\'ve forgotten a lot.',
-        // 'Your memory is in tatters.',
-        // 'But do you remember...',
-        // <><div onClick={startCookie}>How to count to 1000?</div></>,
+
+
+
+
         // 'Maybe we should keep the fun music for a bit?',
         // 'After all, we need something to cheer us up...',
         // 'No?',
@@ -258,12 +431,20 @@ export default function Travel(this: any) {
      <>
         <div className="App" style={{ backgroundColor: bgColor }}>
             <div className="App-header">
-                {(!showCookie && !showList && !showWordSearch && !showCaptcha) && <div className="journey" onClick={increment} style={{ backgroundColor: bgColor }}>
+                {(!showCookie && !showList && !showWordSearch && !showCaptcha && !showStone && !showKnight 
+                    && !showRiddle && !showRiddle2 && !showRiddle3) 
+                    && <div className="journey" onClick={increment} style={{ backgroundColor: bgColor }}>
                     {story[index]}
                 </div>}
-                {showCookie && <div className="cookie" onClick={cookieIncrement}>
-                    <CookieClicker />
-                    <p>{cookieCounter}</p>
+                {showCookie && <div className="cookieClicker">
+                    {cookieCounter < 10 && <div className="cookie" onClick={cookieIncrement}>
+                        <CookieClicker />
+                    </div>}
+                    {cookieCounter === 10 && <div>Uh oh.</div>}
+                    {cookieCounter > 10 && <div className="cookieMover" onClick={cookieIncrement}>
+                        <div className="cookieMover2">
+                        <CookieClicker /></div></div> }
+                    <p>{cookieCounter !== 10 ? cookieCounter : <div onClick={cookieAbruptStop}><Story story={`Now what?`}/></div>}</p>
                 </div>}
                 {showList && <div className="shoppingList">
                     <ShoppingList setShowElement={setShowList} id={1} />
@@ -273,6 +454,22 @@ export default function Travel(this: any) {
                 </div> : null}
                 {showCaptcha && <div className="captcha">
                     <Captcha setShowElement={setShowCaptcha} id={3} />
+                </div>}
+                {showStone && <div className="stone">
+                    <Stone setShowElement={setShowStone} id={4} />
+                </div>}
+                {showKnight && <div className="knight">
+                    You're pretty sure you need to use spaces here.
+                    <p><Guess setShowElement={setShowKnight} id={5} /></p>
+                </div>}
+                {showRiddle && <div className="riddle">
+                    <Riddle setShowElement={setShowRiddle} id={6} />
+                </div>}
+                {showRiddle2 && <div className="riddle2">
+                    <Riddle setShowElement={setShowRiddle2} id={7} />
+                </div>}
+                {showRiddle3 && <div className="riddle3">
+                    <Riddle setShowElement={setShowRiddle3} id={8} />
                 </div>}
             </div>
         </div>
