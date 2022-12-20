@@ -51,7 +51,10 @@ const Guess: FC<GuessProps> = ({ setShowElement, id }) => {
 
     useEffect(() => {
         window.addEventListener('keydown', e => {
-            if(e.key) {
+            if(e.code === "Enter") {
+                handleGuess()
+            }
+            else {
                 setError(false)
             }
         })
