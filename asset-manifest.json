@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/christmasforever/static/css/main.c2afb019.css",
-    "main.js": "/christmasforever/static/js/main.bdbc20c7.js",
+    "main.css": "/christmasforever/static/css/main.957ef36b.css",
+    "main.js": "/christmasforever/static/js/main.9c85db95.js",
     "static/js/787.28cb0dcd.chunk.js": "/christmasforever/static/js/787.28cb0dcd.chunk.js",
     "static/media/Krampus.mp3": "/christmasforever/static/media/Krampus.7a568a878a0e53346ba8.mp3",
     "static/media/circus.mp3": "/christmasforever/static/media/circus.1f7229d4672431798f84.mp3",
     "static/media/DeckTheHalls.mp3": "/christmasforever/static/media/DeckTheHalls.73e37a6c461e22ed1751.mp3",
+    "static/media/stone.png": "/christmasforever/static/media/stone.5f1000bb0690f149bd35.png",
     "static/media/snowflake.png": "/christmasforever/static/media/snowflake.d3a85716792a9d291370.png",
     "static/media/cookie.png": "/christmasforever/static/media/cookie.a1c45a4be015ac256640.png",
+    "static/media/number3.png": "/christmasforever/static/media/number3.c60588fc1961179ef8f0.png",
+    "static/media/number1.png": "/christmasforever/static/media/number1.07110e703f4015237f4f.png",
+    "static/media/captcha.jpeg": "/christmasforever/static/media/captcha.5f22ee589310cc0ebe29.jpeg",
+    "static/media/number2.jpeg": "/christmasforever/static/media/number2.5eeb003ecdb691abc7fc.jpeg",
     "index.html": "/christmasforever/index.html",
-    "main.c2afb019.css.map": "/christmasforever/static/css/main.c2afb019.css.map",
-    "main.bdbc20c7.js.map": "/christmasforever/static/js/main.bdbc20c7.js.map",
+    "main.957ef36b.css.map": "/christmasforever/static/css/main.957ef36b.css.map",
+    "main.9c85db95.js.map": "/christmasforever/static/js/main.9c85db95.js.map",
     "787.28cb0dcd.chunk.js.map": "/christmasforever/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2afb019.css",
-    "static/js/main.bdbc20c7.js"
+    "static/css/main.957ef36b.css",
+    "static/js/main.9c85db95.js"
   ]
 }
