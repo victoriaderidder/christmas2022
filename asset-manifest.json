@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/christmasforever/static/css/main.957ef36b.css",
-    "main.js": "/christmasforever/static/js/main.397fe26c.js",
+    "main.js": "/christmasforever/static/js/main.1169b3d9.js",
     "static/js/787.28cb0dcd.chunk.js": "/christmasforever/static/js/787.28cb0dcd.chunk.js",
     "static/media/Krampus.mp3": "/christmasforever/static/media/Krampus.7a568a878a0e53346ba8.mp3",
     "static/media/circus.mp3": "/christmasforever/static/media/circus.1f7229d4672431798f84.mp3",
@@ -15,11 +15,11 @@
     "static/media/number2.jpeg": "/christmasforever/static/media/number2.5eeb003ecdb691abc7fc.jpeg",
     "index.html": "/christmasforever/index.html",
     "main.957ef36b.css.map": "/christmasforever/static/css/main.957ef36b.css.map",
-    "main.397fe26c.js.map": "/christmasforever/static/js/main.397fe26c.js.map",
+    "main.1169b3d9.js.map": "/christmasforever/static/js/main.1169b3d9.js.map",
     "787.28cb0dcd.chunk.js.map": "/christmasforever/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.957ef36b.css",
-    "static/js/main.397fe26c.js"
+    "static/js/main.1169b3d9.js"
   ]
 }
