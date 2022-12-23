@@ -35,10 +35,10 @@ const style = {
 const Guess: FC<GuessProps> = ({ setShowElement, answer }) => {
     const [theGuess, setTheGuess] = useState('')
     const [error, setError] = useState(false);
-    
+
     const compareValues = () =>  {
         const answerMap = answer.map((answer: string) => answer.toLowerCase());
-        return answerMap.includes(theGuess) || theGuess === 'skip'
+        return answerMap.includes(theGuess.toLowerCase()) || theGuess.toLowerCase() === 'skip'
     }
 
     const handleGuess = () => {
