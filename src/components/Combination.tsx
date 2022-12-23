@@ -6,16 +6,16 @@ import number3 from '../assets/img/number3.png'
 
 interface CombinationProps {
   setShowElement: (showList: boolean) => void;
-    id: number;
+  answer: string[];
 }
 
-const Combination: FC<CombinationProps> = ({ setShowElement, id }) => {
+const Combination: FC<CombinationProps> = ({ setShowElement, answer }) => {
   return (
     <>
         <img src={number1} id='number1' alt='number1' style={{width: '200px', height: '200px'}} />
         <img src={number2} id='number2' alt='number2' style={{width: '200px', height: '200px'}} />
         <img src={number3} id='number3' alt='number3' style={{width: '200px', height: '200px'}} />
-        <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
+        <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
     </>
   );
 };

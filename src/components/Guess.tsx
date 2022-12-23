@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 
 interface GuessProps {
     setShowElement: (showList: boolean) => void;
-    id: number;
+    answer: string[];
 }
 
 const style = {
@@ -32,21 +32,17 @@ const style = {
     input: { color: 'white' }
   }    
 
-const Guess: FC<GuessProps> = ({ setShowElement, id }) => {
+const Guess: FC<GuessProps> = ({ setShowElement, answer }) => {
     const [theGuess, setTheGuess] = useState('')
     const [error, setError] = useState(false);
+    
+    const compareValues = () =>  {
+        const answerMap = answer.map((answer: string) => answer.toLowerCase());
+        return answerMap.includes(theGuess) || theGuess === 'skip'
+    }
 
     const handleGuess = () => {
-        theGuess.toLowerCase() === 'skip' && setShowElement(false)
-        id === 1 && (theGuess.toLowerCase() === 'cookie') ? setShowElement(false) : setError(true)
-        id === 2 && (theGuess.toLowerCase() === 'captcha') ? setShowElement(false) : setError(true)
-        id === 3 && (theGuess.toLowerCase() === 'no ellen') ? setShowElement(false) : setError(true)
-        id === 4 && (theGuess.toLowerCase() === 'press to activate') ? setShowElement(false) : setError(true)
-        id === 5 && (theGuess.toLowerCase() === `if you want your precious cookie back then youd better give me the thing i lack` || theGuess.toLowerCase() === `if you want your precious cookie back then you'd better give me the thing i lack`) ? setShowElement(false) : setError(true)
-        id === 6 && (theGuess.toLowerCase() === 'snowglobe') ? setShowElement(false) : setError(true)
-        id === 7 && (theGuess.toLowerCase() === 'christmas tree') ? setShowElement(false) : setError(true)
-        id === 8 && (theGuess.toLowerCase() === 'water') ? setShowElement(false) : setError(true)
-        id === 9 && (theGuess.toLowerCase() === '125') ? setShowElement(false) : setError(true)
+        compareValues() ? setShowElement(false) : setError(true)
     }
 
     useEffect(() => {

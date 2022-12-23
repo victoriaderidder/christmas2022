@@ -5,14 +5,14 @@ import stone from '../assets/img/stone.png'
 
 interface StoneProps {
   setShowElement: (showList: boolean) => void;
-    id: number;
+    answer: string[];
 }
 
-const Stone: FC<StoneProps> = ({ setShowElement, id }) => {
+const Stone: FC<StoneProps> = ({ setShowElement, answer }) => {
   return (
     <>
         <img src={stone} id='stone' alt='stone' />
-        <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
+        <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
     </>
   );
 };

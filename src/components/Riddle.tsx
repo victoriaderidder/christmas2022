@@ -3,10 +3,11 @@ import Guess from './Guess';
 
 interface RiddleProps {
   setShowElement: (showList: boolean) => void;
-  id: number
+  id: number;
+  answer: string[];
 }
 
-const Riddle: FC<RiddleProps> = ({ setShowElement, id }) => {
+const Riddle: FC<RiddleProps> = ({ setShowElement, answer, id }) => {
 
   const SnowGlobeRiddle = [
     <>Winter, spring, summer or fall,  <br />
@@ -17,7 +18,7 @@ const Riddle: FC<RiddleProps> = ({ setShowElement, id }) => {
     (That comes from midair) <br />
     Reveals what's been hidden <br />
     And lays it all bare.
-    <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
+    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
   </>
   ]
 
@@ -26,7 +27,7 @@ const Riddle: FC<RiddleProps> = ({ setShowElement, id }) => {
     In summer, you need me.  <br />
     In autumn, you loathe me.<br />
     In winter, you hold me.
-    <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
+    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
   </>
   ]
 
@@ -35,15 +36,15 @@ const Riddle: FC<RiddleProps> = ({ setShowElement, id }) => {
     No longer can I grow. <br />
     I have many needles.<br />
     Yet never do I sew.
-    <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
+    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
   </>
   ]
 
   return (
     <>
-    {id === 6 && SnowGlobeRiddle}
-    {id === 7 && TreeRiddle}
-    {id === 8 && WinterRiddle}
+    {id === 1 && SnowGlobeRiddle}
+    {id === 2 && TreeRiddle}
+    {id === 3 && WinterRiddle}
     </>
   );
 };

@@ -3,10 +3,10 @@ import Guess from './Guess';
 
 interface ShoppingListProps {
   setShowElement: (showList: boolean) => void;
-    id: number;
+    answer: string[];
 }
 
-const ShoppingList: FC<ShoppingListProps> = ({ setShowElement, id }) => {
+const ShoppingList: FC<ShoppingListProps> = ({ setShowElement, answer }) => {
   return (
     <>
     3 Rice<br />
@@ -15,7 +15,7 @@ const ShoppingList: FC<ShoppingListProps> = ({ setShowElement, id }) => {
     4 Milk<br />
     10 Strawberries<br />
     8 Salad dressings
-    <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
+    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
     </>
   );
 };

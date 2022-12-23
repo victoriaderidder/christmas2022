@@ -5,16 +5,16 @@ import captcha from '../assets/img/captcha.jpeg'
 
 interface CaptchaProps {
   setShowElement: (showList: boolean) => void;
-    id: number;
+  answer: string[];
 }
 
-const Captcha: FC<CaptchaProps> = ({ setShowElement, id }) => {
+const Captcha: FC<CaptchaProps> = ({ setShowElement, answer }) => {
   return (
     <>
     <p>"What's wrong with this picture?"</p>
       <img src={captcha} id='captcha' alt='captcha' />
 
-    <p>{<Guess setShowElement={setShowElement} id={id} />}</p>
+    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
     </>
   );
 };
