@@ -10,7 +10,7 @@ interface CookieClickerProps {
 const CookieClicker: FC<CookieClickerProps> = ({ title, subtitle }) => {
   return (
     <>
-      <img src={cookie} id='cookie' alt='cookie' />
+      <img src={cookie} id='cookie' alt='cookie' unselectable="on" />
     </>
   );
 };

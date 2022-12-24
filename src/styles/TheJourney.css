@@ -43,9 +43,17 @@
     animation: moveAround 15s infinite;
 }
 
+*.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+
 .App {
     text-align: center;
-  }
+}
   
 .App-header {
     min-height: 100vh;

@@ -476,8 +476,8 @@ export default function Travel(this: any) {
         <Story bgColor={true} story={`You're grateful to everyone who helped rescue you.`} />,
         <Story bgColor={true} story={`The next day, you enter your sleigh, piled high with gifts.`} />,
         <Story bgColor={true} story={`The elves cheer as you and La Befellena rise into the air.`} />,
-        <Story bgColor={true} story={`"On Dasher, on Dancer!" you shout.`} />,
-        <Story bgColor={true} story={`"On Prancer and Vixen!" La Befellena shouts.`} />,
+        <Story bgColor={true} story={`"On Comet, on Cupid!" you shout.`} />,
+        <Story bgColor={true} story={`"On Donner and Blitzen!" La Befellena shouts.`} />,
         <><div onClick={() => setShowEnding(true)}><Story bgColor={true} story={`And the elves heard you both exclaim, as you drove out of sight...`} /></div></>,
     ];
 
@@ -496,7 +496,7 @@ export default function Travel(this: any) {
                     </div>}
                     {cookieCounter === 250 && <div>Uh oh.</div>}
                     {cookieCounter > 250 && <div className="cookieMover" onClick={cookieIncrement}>
-                        <div className="cookieMover2">
+                        <div className="cookieMover2 unselectable">
                         <CookieClicker /></div></div> }
                     <p>{cookieCounter !== 250 ? cookieCounter : <div onClick={cookieAbruptStop}><Story story={`Now what?`}/></div>}</p>
                 </div>}
