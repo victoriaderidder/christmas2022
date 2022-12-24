@@ -495,8 +495,8 @@ export default function Travel(this: any) {
                         <CookieClicker />
                     </div>}
                     {cookieCounter === 250 && <div>Uh oh.</div>}
-                    {cookieCounter > 250 && <div className="cookieMover" onClick={cookieIncrement}>
-                        <div className="cookieMover2 unselectable">
+                    {cookieCounter > 250 && <div className="cookieMover">
+                        <div className="cookieMover2 unselectable" onClick={cookieIncrement}>
                         <CookieClicker /></div></div> }
                     <p>{cookieCounter !== 250 ? cookieCounter : <div onClick={cookieAbruptStop}><Story story={`Now what?`}/></div>}</p>
                 </div>}
