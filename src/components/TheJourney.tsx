@@ -29,8 +29,6 @@ export default function Travel(this: any) {
     const [showRiddle3, setShowRiddle3] = useState(false);
     const [showCombination, setShowCombination] = useState(false);
     const [showEnding, setShowEnding] = useState(false);
-
-
     let [cookieCounter, setCookieCounter] = useState(0)
 
     const playSong = (song: any) => {
@@ -50,7 +48,6 @@ export default function Travel(this: any) {
     }
 
     const increment = () => {
-      //index < 3 && 
       setIndex(index + 1);
     };
 
@@ -77,7 +74,7 @@ export default function Travel(this: any) {
         <Story story={`You wake up.`}/>,
         <Story story={`This is not the North Pole.`}/>,
         <Story story={`Not anymore.`}/>,
-        <Story story={`It's dark and you\'re disoriented.`}/>,
+        <Story story={`It's dark and you're disoriented.`}/>,
         <Story story={`You try to remember how you got here.`}/>,
         <Story story={`You'd been getting ready for your first ever Christmas as Santa.`}/>,
         <Story story={`It was late at night.`}/>,
@@ -97,7 +94,7 @@ export default function Travel(this: any) {
         <Story story={`Except Santa is missing and Christmas is ruined and everything is absolutely terrible.`}/>,
         <Story story={`This should be the most magical time of the year.`}/>,
         <Story story={`Up until two days ago, you were busy helping Santa get ready for her first Christmas!`}/>,
-        <Story story={`You'd barely left the new Santa\'s side since she started.`}/>,
+        <Story story={`You'd barely left the new Santa's side since she started.`}/>,
         <Story story={`You were so excited to help bring joy to children everywhere!`}/>,
         <Story story={`And now...and now...`}/>,
         <Story story={`Oh, woe! It is simply too terrible to speak of!`}/>,
@@ -132,7 +129,7 @@ export default function Travel(this: any) {
         <Story story='A shadowy figure stands in the doorway.'/>,
         <Story story={`"So. You're finally awake."`} />,
         <Story story='The figure comes into view...'/>,
-        <Story story={`He looks familiar, but you can\'t quite place him.`}/>,
+        <Story story={`He looks familiar, but you can't quite place him.`}/>,
         <Story story={`"Where am I?" you ask.`} />,
         <Story story={`"Don't worry about that," he says.`}/>,
         <Story story={`Yet, somehow, you are worried about that. Strange.`}/>,
@@ -147,7 +144,7 @@ export default function Travel(this: any) {
         <Story story={`And that's when you realize how you know him...`}/>,
         <Story story={`"Charlie?" you ask incredulously.`}/>,
         <Story story={`Yep. It's Charlie Calvin. Like from The Santa Clause.`}/>,
-        <Story story={`He's a couple of decades older, but it\'s definitely him.`}/>,
+        <Story story={`He's a couple of decades older, but it's definitely him.`}/>,
         <Story story={`"It's Charles now," he says.`}/>,
         <Story story={`"I didn't kill your father," you say. "There was this robot — "`}/>,
         <Story story={`Charles does not believe your frankly ridiculous story.`}/>,

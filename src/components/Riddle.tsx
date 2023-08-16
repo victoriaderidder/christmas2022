@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import Guess from './Guess';
 
 interface RiddleProps {
@@ -8,6 +8,24 @@ interface RiddleProps {
 }
 
 const Riddle: FC<RiddleProps> = ({ setShowElement, answer, id }) => {
+
+  const TreeRiddle = [
+    <>I wear a dress of glowing light. <br />
+    No longer can I grow. <br />
+    I have many needles.<br />
+    Yet never do I sew.
+    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
+  </>
+  ]
+
+  const WinterRiddle = [
+    <>In spring, I come freely.  <br />
+    In summer, you need me.  <br />
+    In autumn, you loathe me.<br />
+    In winter, you hold me.
+    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
+  </>
+  ]
 
   const SnowGlobeRiddle = [
     <>Winter, spring, summer or fall,  <br />
@@ -22,29 +40,11 @@ const Riddle: FC<RiddleProps> = ({ setShowElement, answer, id }) => {
   </>
   ]
 
-  const WinterRiddle = [
-    <>In spring, I come freely.  <br />
-    In summer, you need me.  <br />
-    In autumn, you loathe me.<br />
-    In winter, you hold me.
-    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
-  </>
-  ]
-
-  const TreeRiddle = [
-    <>I wear a dress of glowing light. <br />
-    No longer can I grow. <br />
-    I have many needles.<br />
-    Yet never do I sew.
-    <p>{<Guess setShowElement={setShowElement} answer={answer} />}</p>
-  </>
-  ]
-
   return (
     <>
-    {id === 1 && SnowGlobeRiddle}
-    {id === 2 && TreeRiddle}
-    {id === 3 && WinterRiddle}
+    {id === 1 && TreeRiddle}
+    {id === 2 && WinterRiddle}
+    {id === 3 && SnowGlobeRiddle}
     </>
   );
 };

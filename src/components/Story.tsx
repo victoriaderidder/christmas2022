@@ -1,4 +1,4 @@
-import { Button, darken } from '@mui/material';
+import { Button } from '@mui/material';
 import React, { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
