@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Title from "./Title";
 import Story from "./Story";
 import snowflake from "../assets/img/snowflake.png";
@@ -53,33 +53,51 @@ export default function Travel(this: any) {
   };
 
   const startCookie = () => {
-    cookieCounter === 250 && setCookieCounter(cookieCounter + 1);
+    cookieCounter < 20 && setCookieCounter(0);
+    cookieCounter >= 20 && setCookieCounter(21);
     setShowCookie(true);
     playSong(Circus);
   };
 
   const cookieIncrement = () => {
     setCookieCounter(cookieCounter + 1);
-    cookieCounter === 1000 && setShowCookie(false);
-    cookieCounter === 1000 && playSong(Krampus);
+    cookieCounter === 100 && setShowCookie(false);
+    cookieCounter === 100 && playSong(Krampus);
   };
 
-  const cookieAbruptStop = () => {
+  useEffect(() => {
+    !showCookie && playSong(Krampus);
+  }, [showCookie]);
+
+  useEffect(() => {
+    bgColor === "#282c34" && playSong(Krampus);
+  }, [bgColor]);
+
+  const showStory = () => {
     setShowCookie(false);
-    playSong(Krampus);
+    setShowKnight(false);
+    setShowCaptcha(false);
+    setShowCombination(false);
+    setShowList(false);
+    setShowEnding(false);
+    setShowRiddle(false);
+    setShowRiddle2(false);
+    setShowRiddle3(false);
+    setShowStone(false);
+    setShowWordSearch(false);
   };
 
   const story = [
-    <>
+    <React.Fragment key={"beginnings"}>
       <div className="spinner-container">
         <img
           src={snowflake}
           id="snowflake"
           alt="snowflake"
-          onClick={() => playSong(Krampus)}
+          //onClick={() => playSong(Krampus)}
         />
       </div>
-    </>,
+    </React.Fragment>,
     <Title title="> Santa Lizzy." />,
     <Story story={`You wake up.`} />,
     <Story story={`This is not the North Pole.`} />,
@@ -229,7 +247,7 @@ export default function Travel(this: any) {
     <Story story={`It would probably ruin Christmas or something.`} />,
     <Story story={`But you are getting super desperate.`} />,
     <Story story={`Something on Santa's desk catches your eye.`} />,
-    <Story story={`It's...a shopping list?`} />,
+    <Story story={`It's...a shopping list?`} key={"listRiddle"} />,
     <>
       <div onClick={() => setShowList(true)}>
         <Story story={`That's weird. Santa doesn't shop...`} />
@@ -301,7 +319,7 @@ export default function Travel(this: any) {
     <Story
       story={`You raise the stupid rock to throw it at the stupid door.`}
     />,
-    <Story story={`But wait!`} />,
+    <Story story={`But wait!`} key={"stoneRiddle"} />,
     <>
       <div onClick={() => setShowStone(true)}>
         <Story story={`There's some sort of writing on the other side!`} />
@@ -364,11 +382,11 @@ export default function Travel(this: any) {
     <Story story={`Haha.`} />,
     <Story story={`(Please let me call you Will.)`} />,
     <Story story={`You have no time for my foolish games!`} />,
-    <>
+    <React.Fragment key={"captchaRiddle"}>
       <div onClick={() => setShowCaptcha(true)}>
         <Story story={`You study the captcha intently...`} />
       </div>
-    </>,
+    </React.Fragment>,
     <Story
       story={`It does seem that someone has haphazardly erased the N from your clever captcha.`}
     />,
@@ -452,13 +470,13 @@ export default function Travel(this: any) {
     <Story story={`You declare your intent to enter.`} />,
     <Story story={`The empty air before you shimmers.`} />,
     <Story story={`It speaks in a loud, booming voice:`} />,
-    <>
+    <React.Fragment key={"riddleRiddles"}>
       <div onClick={() => setShowRiddle(true)}>
         <Story
           story={`"Those who wish to enter must answer me these riddles three."`}
         />
       </div>
-    </>,
+    </React.Fragment>,
     <>
       <div onClick={() => setShowRiddle2(true)}>
         <Story story={`It speaks again:`} />
@@ -603,12 +621,14 @@ export default function Travel(this: any) {
     <Story
       story={`You vaguely remember Elfward telling you something like that.`}
     />,
+    <Story story={`And that to avoid accidental activation...`} />,
     <Story
-      story={`And that to avoid accidental activation, it has to be pressed something like...`}
+      story={`It has to be pressed something like...`}
+      key={"cookieClicker"}
     />,
     <>
       <div onClick={startCookie}>
-        <Story story={`A thousand times?`} />
+        <Story story={`A hundred times?`} />
       </div>
     </>,
     <Story
@@ -676,11 +696,11 @@ export default function Travel(this: any) {
     <Story
       story={`You don't have time to find somebody who might know the password!`}
     />,
-    <>
+    <React.Fragment key={"combinationRiddle"}>
       <div onClick={() => setShowCombination(true)}>
         <Story story={`You all gather around the lock...`} />
       </div>
-    </>,
+    </React.Fragment>,
     <Story story={`One partridge in a pear tree...`} />,
     <Story story={`Two turtle doves...`} />,
     <Story story={`And five gold rings!`} />,
@@ -697,11 +717,11 @@ export default function Travel(this: any) {
     <Story
       story={`You definitely have a chance in the next head elf election!`}
     />,
-    <>
+    <React.Fragment key={"ending"}>
       <div onClick={() => playAndChange(DeckTheHalls, "#C30F16")}>
         <Story story={`Oh, and of course...`} />
       </div>
-    </>,
+    </React.Fragment>,
     <Story bgColor={true} story={`Christmas is saved!`} />,
 
     <Title title="> Elfward." />,
@@ -771,11 +791,28 @@ export default function Travel(this: any) {
     </>,
   ];
 
+  const menuMap = [
+    story.findIndex((item) => item.key === "beginnings"),
+    story.findIndex((item) => item.key === "listRiddle"),
+    story.findIndex((item) => item.key === "stoneRiddle"),
+    story.findIndex((item) => item.key === "captchaRiddle"),
+    story.findIndex((item) => item.key === "riddleRiddles"),
+    story.findIndex((item) => item.key === "cookieClicker"),
+    story.findIndex((item) => item.key === "combinationRiddle"),
+    story.findIndex((item) => item.key === "ending"),
+  ];
+
   return (
     <>
       <div className="App" style={{ backgroundColor: bgColor }}>
         <div className="Menu-bar">
-          <Menu bgColor={bgColor} />
+          <Menu
+            bgColor={bgColor}
+            items={menuMap}
+            setIndex={setIndex}
+            showStory={showStory}
+            setBgColor={setBgColor}
+          />
         </div>
         <div className="App-header">
           {!showCookie &&
@@ -799,13 +836,13 @@ export default function Travel(this: any) {
             )}
           {showCookie && (
             <div className="cookieClicker">
-              {cookieCounter < 250 && (
+              {cookieCounter < 20 && (
                 <div className="cookie" onClick={cookieIncrement}>
                   <CookieClicker />
                 </div>
               )}
-              {cookieCounter === 250 && <div>Uh oh.</div>}
-              {cookieCounter > 250 && (
+              {cookieCounter === 20 && <div>Uh oh.</div>}
+              {cookieCounter > 20 && (
                 <div className="cookieMover">
                   <div
                     className="cookieMover2 unselectable"
@@ -816,10 +853,10 @@ export default function Travel(this: any) {
                 </div>
               )}
               <p>
-                {cookieCounter !== 250 ? (
+                {cookieCounter !== 20 ? (
                   <div className="unselectable">{cookieCounter}</div>
                 ) : (
-                  <div onClick={cookieAbruptStop}>
+                  <div onClick={() => setShowCookie(false)}>
                     <Story story={`Now what?`} />
                   </div>
                 )}
