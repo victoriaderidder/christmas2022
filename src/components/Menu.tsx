@@ -35,6 +35,7 @@ const Menu: FC<MenuProps> = ({
       backgroundColor: bgColor,
       color: "white",
       width: "180px",
+      marginLeft: "-15px",
       "& :hover": {
         fontWeight: "bold",
         backgroundColor: bgColor,
@@ -46,6 +47,7 @@ const Menu: FC<MenuProps> = ({
     showStory();
     setBgColor("#282c34");
     setIndex(items[index]);
+    handleClose();
   };
 
   return (
