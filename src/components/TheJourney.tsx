@@ -94,7 +94,7 @@ export default function Travel(this: any) {
           src={snowflake}
           id="snowflake"
           alt="snowflake"
-          //onClick={() => playSong(Krampus)}
+          onClick={() => playSong(Krampus)}
         />
       </div>
     </React.Fragment>,
