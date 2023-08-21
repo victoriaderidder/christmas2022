@@ -52,9 +52,8 @@ export default function Travel(this: any) {
     setIndex(index + 1);
   };
 
-  const startCookie = () => {
-    cookieCounter < 20 && setCookieCounter(0);
-    cookieCounter >= 20 && setCookieCounter(21);
+  const startCookie = (cookieCount: number) => {
+    setCookieCounter(cookieCount);
     setShowCookie(true);
     playSong(Circus);
   };
@@ -627,7 +626,7 @@ export default function Travel(this: any) {
       key={"cookieClicker"}
     />,
     <>
-      <div onClick={startCookie}>
+      <div onClick={() => startCookie(0)}>
         <Story story={`A hundred times?`} />
       </div>
     </>,
@@ -640,13 +639,13 @@ export default function Travel(this: any) {
     <Story story={`He lunges towards you!`} />,
     <Story story={`You dodge and run out the door.`} />,
     <Story story={`Charles is right behind you!`} />,
-    <>
-      <div onClick={startCookie}>
+    <React.Fragment key={"cookieClickerTwo"}>
+      <div onClick={() => startCookie(21)}>
         <Story
           story={`You keep frantically pressing the cookie, but it's hard when you're moving so much...`}
         />
       </div>
-    </>,
+    </React.Fragment>,
     <Story story={`The cookie begins to glow and pulse!`} />,
     <Story story={`You feel Charles' hand roughly grab your shoulder...`} />,
     <Story story={`And then you're gone!`} />,
@@ -798,6 +797,7 @@ export default function Travel(this: any) {
     story.findIndex((item) => item.key === "captchaRiddle"),
     story.findIndex((item) => item.key === "riddleRiddles"),
     story.findIndex((item) => item.key === "cookieClicker"),
+    story.findIndex((item) => item.key === "cookieClickerTwo"),
     story.findIndex((item) => item.key === "combinationRiddle"),
     story.findIndex((item) => item.key === "ending"),
   ];

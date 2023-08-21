@@ -2,7 +2,7 @@
   "name": "christmas-forever",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://vtoriafisher.github.io/christmasforever",
+  "homepage": "http://victoriaderidder.github.io/christmasforever",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

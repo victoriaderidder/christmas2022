@@ -80,9 +80,12 @@ const Menu: FC<MenuProps> = ({
         <MenuItem onClick={() => handleItemClick(4)}>Riddles Three</MenuItem>
         <MenuItem onClick={() => handleItemClick(5)}>Cookie Clicker</MenuItem>
         <MenuItem onClick={() => handleItemClick(6)}>
+          Cookie Clicker 2.0
+        </MenuItem>
+        <MenuItem onClick={() => handleItemClick(7)}>
           Final Combination
         </MenuItem>
-        <MenuItem onClick={() => handleItemClick(7)}>The End</MenuItem>
+        <MenuItem onClick={() => handleItemClick(8)}>The End</MenuItem>
       </MUIMenu>
     </div>
   );
