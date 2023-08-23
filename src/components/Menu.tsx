@@ -58,10 +58,10 @@ const Menu: FC<MenuProps> = ({
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        style={{ float: "left" }}
+        style={{ float: "left", marginLeft: "4px" }}
         disableRipple
       >
-        <FontAwesomeIcon icon={faBars} size="lg" color="white" />
+        <FontAwesomeIcon icon={faBars} color="white" fontSize={"2rem"} />
       </Button>
       <MUIMenu
         id="basic-menu"
@@ -71,16 +71,18 @@ const Menu: FC<MenuProps> = ({
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
         sx={style}
       >
         <MenuItem onClick={() => handleItemClick(0)}>Beginnings</MenuItem>
-        <MenuItem onClick={() => handleItemClick(1)}>Shopping List</MenuItem>
+        <MenuItem onClick={() => handleItemClick(1)}>* Shopping List</MenuItem>
         <MenuItem onClick={() => handleItemClick(2)}>Stone Cypher</MenuItem>
         <MenuItem onClick={() => handleItemClick(3)}>Captcha</MenuItem>
-        <MenuItem onClick={() => handleItemClick(4)}>Riddles Three</MenuItem>
+        <MenuItem onClick={() => handleItemClick(4)}>* Riddles Three</MenuItem>
         <MenuItem onClick={() => handleItemClick(5)}>Cookie Clicker</MenuItem>
         <MenuItem onClick={() => handleItemClick(6)}>
-          Cookie Clicker 2.0
+          * Cookie Clicker 2.0
         </MenuItem>
         <MenuItem onClick={() => handleItemClick(7)}>
           Final Combination
