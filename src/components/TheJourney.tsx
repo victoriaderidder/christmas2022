@@ -812,6 +812,8 @@ export default function Travel(this: any) {
             setIndex={setIndex}
             showStory={showStory}
             setBgColor={setBgColor}
+            playSong={playSong}
+            song={Krampus}
           />
         </div>
         <div className="App-header">

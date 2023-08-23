@@ -12,6 +12,8 @@ interface MenuProps {
   setIndex: any;
   showStory: any;
   setBgColor: any;
+  playSong: any;
+  song: any;
 }
 
 const Menu: FC<MenuProps> = ({
@@ -20,8 +22,11 @@ const Menu: FC<MenuProps> = ({
   setIndex,
   showStory,
   setBgColor,
+  playSong,
+  song,
 }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [clickedMenu, setClickedMenu] = React.useState(false);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -47,6 +52,8 @@ const Menu: FC<MenuProps> = ({
     showStory();
     setBgColor("#282c34");
     setIndex(items[index]);
+    !clickedMenu && playSong(song);
+    setClickedMenu(true);
     handleClose();
   };
 
@@ -71,8 +78,6 @@ const Menu: FC<MenuProps> = ({
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        transformOrigin={{ vertical: "top", horizontal: "center" }}
         sx={style}
       >
         <MenuItem onClick={() => handleItemClick(0)}>Beginnings</MenuItem>
