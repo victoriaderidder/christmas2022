@@ -1,4 +1,4 @@
-Visit https://victoriaderidder.github.io/christmasforever/ to play this text-based adventure!
+Visit https://victoriaderidder.github.io/christmas2022/ to play this text-based adventure!
 
 Type 'skip' into any guess box to skip any riddle. Some are unsolvable without physical items.
 
