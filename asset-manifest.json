@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/christmasforever/static/css/main.5e1ff243.css",
-    "main.js": "/christmasforever/static/js/main.ea4dade1.js",
-    "static/media/Krampus.mp3": "/christmasforever/static/media/Krampus.7a568a878a0e53346ba8.mp3",
-    "static/media/circus.mp3": "/christmasforever/static/media/circus.1f7229d4672431798f84.mp3",
-    "static/media/DeckTheHalls.mp3": "/christmasforever/static/media/DeckTheHalls.73e37a6c461e22ed1751.mp3",
-    "static/media/stone.png": "/christmasforever/static/media/stone.5f1000bb0690f149bd35.png",
-    "static/media/snowflake.png": "/christmasforever/static/media/snowflake.d3a85716792a9d291370.png",
-    "static/media/cookie.png": "/christmasforever/static/media/cookie.a1c45a4be015ac256640.png",
-    "static/media/number3.png": "/christmasforever/static/media/number3.c60588fc1961179ef8f0.png",
-    "static/media/number1.png": "/christmasforever/static/media/number1.07110e703f4015237f4f.png",
-    "static/media/captcha.jpeg": "/christmasforever/static/media/captcha.5f22ee589310cc0ebe29.jpeg",
-    "static/media/number2.jpeg": "/christmasforever/static/media/number2.5eeb003ecdb691abc7fc.jpeg",
-    "index.html": "/christmasforever/index.html",
-    "main.5e1ff243.css.map": "/christmasforever/static/css/main.5e1ff243.css.map",
-    "main.ea4dade1.js.map": "/christmasforever/static/js/main.ea4dade1.js.map"
+    "main.css": "/christmas2022/static/css/main.5e1ff243.css",
+    "main.js": "/christmas2022/static/js/main.949774aa.js",
+    "static/media/Krampus.mp3": "/christmas2022/static/media/Krampus.7a568a878a0e53346ba8.mp3",
+    "static/media/circus.mp3": "/christmas2022/static/media/circus.1f7229d4672431798f84.mp3",
+    "static/media/DeckTheHalls.mp3": "/christmas2022/static/media/DeckTheHalls.73e37a6c461e22ed1751.mp3",
+    "static/media/stone.png": "/christmas2022/static/media/stone.5f1000bb0690f149bd35.png",
+    "static/media/snowflake.png": "/christmas2022/static/media/snowflake.d3a85716792a9d291370.png",
+    "static/media/cookie.png": "/christmas2022/static/media/cookie.a1c45a4be015ac256640.png",
+    "static/media/number3.png": "/christmas2022/static/media/number3.c60588fc1961179ef8f0.png",
+    "static/media/number1.png": "/christmas2022/static/media/number1.07110e703f4015237f4f.png",
+    "static/media/captcha.jpeg": "/christmas2022/static/media/captcha.5f22ee589310cc0ebe29.jpeg",
+    "static/media/number2.jpeg": "/christmas2022/static/media/number2.5eeb003ecdb691abc7fc.jpeg",
+    "index.html": "/christmas2022/index.html",
+    "main.5e1ff243.css.map": "/christmas2022/static/css/main.5e1ff243.css.map",
+    "main.949774aa.js.map": "/christmas2022/static/js/main.949774aa.js.map"
   },
   "entrypoints": [
     "static/css/main.5e1ff243.css",
-    "static/js/main.ea4dade1.js"
+    "static/js/main.949774aa.js"
   ]
 }
