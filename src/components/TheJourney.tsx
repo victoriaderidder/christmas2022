@@ -907,7 +907,7 @@ export default function Travel(this: any) {
               <Riddle
                 setShowElement={setShowRiddle}
                 id={1}
-                answer={["snowglobe"]}
+                answer={["water"]}
               />
             </div>
           )}
@@ -925,7 +925,7 @@ export default function Travel(this: any) {
               <Riddle
                 setShowElement={setShowRiddle3}
                 id={3}
-                answer={["water"]}
+                answer={["snowglobe", "snow globe"]}
               />
             </div>
           )}
